@@ -27,6 +27,14 @@
             hasDynamicSize: {
                 type: Boolean,
                 default: true
+            },
+            bgColors: {
+                type: String,
+                default: '#3B86FF'
+            },
+            colors: {
+                type: String,
+                default: '#FFF'
             }
         },
         data() {
@@ -76,6 +84,8 @@
                 if ( this.hasDynamicSize ) {
                     styles.push({
                         'height': this.displayHeight + 'px',
+                        'background-color': this.bgColor,
+                        'color': this.color,
                     });
 
                     if ( this.event.overlaps > 0 ) {
@@ -98,7 +108,7 @@
             },
             eventClasses() {
                 return {
-                    'is-overlapping': this.event.overlaps > 0
+                    'is-overlapping': this.event.overlaps > 0,
                 }
             }
         },
@@ -110,12 +120,11 @@
                 if ( use12 )
                     return hour.format( hour.minutes() > 0 ? 'h.mma' : 'ha' ).slice(0, -1);
 
-                return hour.format( hour.minutes() > 0 ? 'HH.mm' : 'HH' );
+                return hour.format( hour.minutes() > 0 ? 'HH.mm' : 'HH:mm' );
             }
         },
     }
 </script>
 
 <style scoped>
-
 </style>
