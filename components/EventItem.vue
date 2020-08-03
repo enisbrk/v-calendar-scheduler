@@ -28,11 +28,11 @@
                 type: Boolean,
                 default: true
             },
-            bgColors: {
+            bgColor: {
                 type: String,
                 default: '#3B86FF'
             },
-            colors: {
+            color: {
                 type: String,
                 default: '#FFF'
             }
@@ -77,15 +77,13 @@
 
                 let styles = [];
                 styles.push({
-                    'backgroundColor': this.event.color,
-                    'color': this.event.color,
+                    'backgroundColor': this.bgColor,
+                    'color': this.color,
                 });
 
                 if ( this.hasDynamicSize ) {
                     styles.push({
                         'height': this.displayHeight + 'px',
-                        'background-color': this.bgColor,
-                        'color': this.color,
                     });
 
                     if ( this.event.overlaps > 0 ) {
