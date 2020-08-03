@@ -27,14 +27,6 @@
             hasDynamicSize: {
                 type: Boolean,
                 default: true
-            },
-            bgColor: {
-                type: String,
-                default: '#3B86FF'
-            },
-            color: {
-                type: String,
-                default: '#FFF'
             }
         },
         data() {
@@ -75,11 +67,19 @@
             },
             eventStyles() {
 
-                let styles = [];
-                styles.push({
-                    'backgroundColor': this.bgColor,
-                    'color': this.color,
-                });
+				let styles = [];
+				if ( this.event.bgColor !== undefined ) {
+					styles.push({
+						'backgroundColor': this.event.bgColor,
+					});
+				}
+
+				if ( this.event.color !== undefined ) {
+					styles.push({
+						'color': this.event.color,
+					});
+				}
+                
 
                 if ( this.hasDynamicSize ) {
                     styles.push({
