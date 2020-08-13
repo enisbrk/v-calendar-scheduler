@@ -109,7 +109,8 @@
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
-    cursor: pointer;
+	cursor: pointer;
+	font-size: 13px;
 
     &::after {
       content: '';
